@@ -1,11 +1,13 @@
-﻿<Window x:Class="MultyWindowApp.Win"
+﻿<Window x:Class="MultyWindowApp.Win2"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MultyWindowApp"
         mc:Ignorable="d"
-        Title="Win" Height="450" Width="800">
+        Title="Win2" Height="350" Width="500"
+        Loaded="Window_Loaded"
+        ContentRendered="Window_ContentRendered">
 
     <Window.Resources>
         <Style x:Key="StyleFonts" TargetType="Control">
@@ -15,7 +17,7 @@
 
         <Style TargetType="Label" BasedOn="{StaticResource StyleFonts}">
             <Setter Property="Foreground" Value="Blue"/>
-            <Setter Property="HorizontalContentAlignment" Value="Right"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
         </Style>
 
         <Style TargetType="TextBox" BasedOn="{StaticResource StyleFonts}">
@@ -30,29 +32,11 @@
 
     </Window.Resources>
 
-    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-
-            <Label Grid.Column="0" Grid.Row="0" Content="Имя:"/>
-            <TextBox x:Name="TextBox_FirstName" Grid.Column="1" Grid.Row="0"></TextBox>
-
-            <Label Content="Фамилия:"
-                Grid.Column="0" Grid.Row="1" />
-            <TextBox x:Name="TextBox_SecondName"
-                     Grid.Column="1" Grid.Row="1"/>
-        </Grid>
-
-        <Button x:Name="Button_NextStep"
-                Content="Далее"
-                Click="Button_NextStep_Click"/>
-
+    <StackPanel VerticalAlignment="Center">
+        <Label Content="Приветствую!!!"/>
+        <Label x:Name="Label_FirstName" Content="Label_FirstName"/>
+        <Label x:Name="Label_SecondName" Content="Label_SecondName"/>
+        <Button x:Name="Button_Exit" Click="Button_Exit_Click" Content="Выход"/>
     </StackPanel>
+
 </Window>

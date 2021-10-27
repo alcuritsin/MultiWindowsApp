@@ -21,10 +21,12 @@ namespace MultyWindowApp
             InitializeComponent();
         }
 
-        public Win(string Name)
+        private void Button_NextStep_Click(object sender, RoutedEventArgs e)
         {
-            InitializeComponent();
-            Lable_name.Content += Name;
+            var win2 = new Win2(TextBox_FirstName.Text, TextBox_SecondName.Text);
+
+            win2.Show();
+            Close();
         }
     }
 }
