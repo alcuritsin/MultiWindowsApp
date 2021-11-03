@@ -24,7 +24,7 @@ namespace MultyWindowApp
         public MainWindow()
         {
             InitializeComponent();
-            timerLeft = 5;
+            timerLeft = 0;
             Lable_timer.Content = $"Timer: {timerLeft} sec.";
             dt = new DispatcherTimer();
         }
@@ -47,7 +47,7 @@ namespace MultyWindowApp
                 dt.Stop();
                 Lable_timer.Content = $"Show new window...";
             
-                var win = new Win();
+                var win = new WinTab();
 
                 win.Show();
                 Close();
