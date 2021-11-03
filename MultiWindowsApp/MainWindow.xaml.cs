@@ -20,21 +20,19 @@ namespace MultyWindowApp
     public partial class MainWindow : Window
     {
         int timerLeft;
-        DispatcherTimer dt = new DispatcherTimer();
+        DispatcherTimer dt;
         public MainWindow()
         {
             InitializeComponent();
             timerLeft = 5;
             Lable_timer.Content = $"Timer: {timerLeft} sec.";
-
+            dt = new DispatcherTimer();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             dt.Interval = new TimeSpan(0, 0, 1);
             dt.Tick += new EventHandler(dispatcherTimer_Tick);
-
-
         }
 
         private void dispatcherTimer_Tick(object? sender, EventArgs e)
